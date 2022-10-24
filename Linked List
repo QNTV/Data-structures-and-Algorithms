@@ -1,0 +1,19 @@
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+        
+# before: 1-2-3-4-5-6-7
+head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6, ListNode(7)))))))
+slow, fast, dummy = head, head, ListNode(0, head)
+
+while fast and fast.next:
+    slow = slow.next;
+    fast = fast.next.next;
+
+#        d h     s     f
+# after: 0-1-2-3-4-5-6-7
+print("dummy: " + str(dummy.val))
+print("head : " + str(head.val))
+print("slow : " + str(slow.val))
+print("fast : " + str(fast.val))
