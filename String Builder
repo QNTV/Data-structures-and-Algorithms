@@ -1,0 +1,36 @@
+import time
+def useStringJoin(n: int) -> float:
+    start = time.process_time()
+
+    list = []
+    for i in range(n):
+        list.append("num");
+    test = "".join(list)
+        
+    end = time.process_time()
+    return end - start
+
+def useStringConcat(n: int) -> float:
+    start = time.process_time()
+
+    out_str = "";
+    for i in range(n):
+        out_str += "num";
+
+    end = time.process_time()
+    return end - start
+
+"""
+    Theoretically StringJoin should be significantly faster than StringConcat...
+    But for some reason, this example doesn't work...
+    Check out 👇
+        https://stackoverflow.com/questions/3055477/how-slow-is-pythons-string-concatenation-vs-str-join
+"""
+n = 25500000
+
+time_string_join = useStringJoin(n);
+time_string_concat = useStringConcat(n);
+print("Time elapsed using StringJoin  : " + str(time_string_join) + " seconds")
+print("Time elapsed using StringConcat: " + str(time_string_concat) + " seconds")
+
+print("\nStringJoin was " + str(time_string_concat / time_string_join) + " times faster")
