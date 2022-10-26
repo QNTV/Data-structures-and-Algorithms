@@ -325,3 +325,16 @@ print("\nlevelorder: ")
 levelorder(root)
 
 
+# Binary Search tutorial (C++ and Python) https://www.youtube.com/watch?v=GU7DpgHINWQ&t=796s
+
+# Implementation
+L, R = o, N-1
+while L <= R:
+    mid = L ( R - L) // 2
+    if a[mid] == target:
+        return mid
+    if a[mid] < target:
+        L = mid + 1
+    else:
+        R = mid - 1
+return -1
