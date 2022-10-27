@@ -475,3 +475,187 @@ def binarySearch(nums, target):
     if nums[left] == target: return left
     if nums[right] == target: return right
     return -1
+
+
+
+
+    Generalized Binary Search
+#704 https://leetcode.com/problems/binary-search/
+Left, right are possible search spaces, we need to check l,r when they exist in array [0, n-1]
+
+public int search(int[] nums, int target) {
+        int left = 0 ;         int right = nums.length -1;
+        while (left < right) {            
+            int mid = left + (right-left)/2;            
+            if(nums[mid] < target) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        if(nums[left] == target)
+            return left;
+        return -1;
+    }
+This is another variant to move right index instead of left.
+
+    public int search(int[] nums, int target) {
+        int left = 0 ;         int right = nums.length - 1;
+        while(left < right) {
+            int mid = left + (right-left+1)/2;            <<<< Mid biased to support updating right
+            if(nums[mid] > target) {
+                right = mid - 1;
+            }
+            else left = mid;
+        }
+        if(nums[left] == target)
+            return left;
+        return -1;
+    }
+#35 https://leetcode.com/problems/search-insert-position/
+It is possible to insert after len – 1, so right is len here instead.
+
+public int searchInsert(int[] nums, int target) {
+        int left = 0 ;         int right = nums.length;
+        while (left < right) {            
+            int mid = left + (right-left)/2;            
+            if(nums[mid] < target) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        return left;
+    }
+#69 https://leetcode.com/problems/sqrtx/
+#367 https://leetcode.com/problems/valid-perfect-square/
+
+    public int mySqrt(int x) {
+        if(x == 0 || x == 1)
+            return x;
+        int left = 1; 
+        int right = x/2 +2;
+        
+        while (left < right) {            
+            int mid = left + (right-left+1)/2;            
+            if (mid > x/mid) {
+                right = mid - 1;
+            }
+            else left = mid;
+        }        
+        return left;
+    }
+#278 https://leetcode.com/problems/first-bad-version/
+#374 https://leetcode.com/problems/guess-number-higher-or-lower/
+
+    public int guessNumber(int n) {
+        int left = 1 ; 
+        int right = n;
+        while (left < right) {            
+            int mid = left + (right-left)/2;            
+            if(guess(mid) == 1) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        
+        return left;
+    }
+#162 https://leetcode.com/problems/find-peak-element/
+
+  public int findPeakElement(int[] nums) {
+        int left = 0 ; 
+        int right = nums.length - 1;
+        while (left < right) {            
+            int mid = left + (right-left)/2;            
+            if(nums[mid+1] > nums[mid]) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        
+        return left;
+    }
+#153 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+
+public int findMin(int[] nums) {
+        int left = 0 ; 
+        int right = nums.length - 1;
+        while (left < right) {            
+            int mid = left + (right-left)/2;            
+            if(nums[mid] > nums[right]) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        
+        return nums[left];
+    }
+#34 Search Range (First & Last occurrences)
+
+public int searchFirst(int[] nums, int target) {
+        int left = 0 ; 
+        int right = nums.length -1;
+        while (left < right) {            
+            int mid = left + (right-left)/2;  
+            
+            if(nums[mid] < target) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        if(nums.length > 0 && nums[left] == target)
+            return left;
+        return -1;
+    }
+    public int searchLast(int[] nums, int target) {
+        int left = 0 ; 
+        int right = nums.length -1;
+        while (left < right) {            
+            int mid = left + (right-left+1)/2;            <<<< Mid biased to support updating right instead
+            if(nums[mid] > target) {
+                right = mid - 1;
+            }
+            else {
+                left = mid;
+            }
+        }
+        if(nums.length > 0 && nums[left] == target)
+            return left;
+        return -1;
+    }
+#410 https://leetcode.com/problems/split-array-largest-sum/
+#1011 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+
+public int shipWithinDays(int[] weights, int days) {
+        int left = weights[0]; 
+        int right = 0;
+        for(int e: weights) {
+            left = Math.max(left, e); 
+            right += e;
+        }
+        
+        while(left<right) {
+            int mid = left+(right-left) / 2;
+            if(isPossible(days, mid, weights)) {
+                right = mid;
+            }
+            else {
+                left = mid +1;
+            }
+        }
+        return left;
+    }
+    
+    private boolean isPossible(int days, int capacity, int[] wt) {
+        int d = 0; 
+        int curr = 0 ; 
+        for(int w : wt) {
+            curr+= w;
+            if(curr > capacity) {
+                curr = w; 
+                d++;
+                if(d == days)
+                    return false;
+            }
+        }
+        return true;
+    }
