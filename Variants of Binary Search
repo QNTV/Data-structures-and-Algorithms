@@ -479,9 +479,9 @@ def binarySearch(nums, target):
 
 
 
-    Generalized Binary Search
+# Generalized Binary Search
 #704 https://leetcode.com/problems/binary-search/
-Left, right are possible search spaces, we need to check l,r when they exist in array [0, n-1]
+# Left, right are possible search spaces, we need to check l,r when they exist in array [0, n-1]
 
 public int search(int[] nums, int target) {
         int left = 0 ;         int right = nums.length -1;
@@ -496,7 +496,7 @@ public int search(int[] nums, int target) {
             return left;
         return -1;
     }
-This is another variant to move right index instead of left.
+# This is another variant to move right index instead of left.
 
     public int search(int[] nums, int target) {
         int left = 0 ;         int right = nums.length - 1;
@@ -512,7 +512,7 @@ This is another variant to move right index instead of left.
         return -1;
     }
 #35 https://leetcode.com/problems/search-insert-position/
-It is possible to insert after len – 1, so right is len here instead.
+# It is possible to insert after len – 1, so right is len here instead.
 
 public int searchInsert(int[] nums, int target) {
         int left = 0 ;         int right = nums.length;
