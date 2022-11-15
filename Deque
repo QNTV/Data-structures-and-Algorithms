@@ -24,3 +24,5 @@ ll.append(2); print(ll)
 ll.appendleft(0); print(ll)
 ll.pop(); print(ll)
 ll.popleft(); print(ll)
+
+#Update
