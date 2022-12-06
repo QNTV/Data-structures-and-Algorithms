@@ -49,3 +49,5 @@ print("=== check if there's any word that starts with the given prefix in the tr
 startsWithWords = ["p", "kin", "leet", "cheeze", "shell", "faang"]
 for prefix in startsWithWords:
     print("prefix " + prefix + ": " + str(trie.startsWith(prefix)))
+
+# Update
