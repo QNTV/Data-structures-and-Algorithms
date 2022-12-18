@@ -26,4 +26,10 @@ ll.pop(); print(ll)
 ll.popleft(); print(ll)
 
 
-###  updated
+### 
+
+Update
+
+###
+
+# deque list
