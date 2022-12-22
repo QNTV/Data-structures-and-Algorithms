@@ -28,4 +28,15 @@ for i in range(len(arr)):
 	print("%d" % arr[i], end=" ")
 
 
+Bubble-SORT-OPTIMIZED(A)
+  for i in 1 to A.length
+    swapped = FALSE
+    for j in 1 to A.length-i
+      if A[j] > A[j+1]
+        swap(A[j], A[j+1])
+        swapped = TRUE
+    if not(swapped)
+      break
+
+
 # update
