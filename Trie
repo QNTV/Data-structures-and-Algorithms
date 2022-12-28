@@ -51,5 +51,7 @@ for prefix in startsWithWords:
     print("prefix " + prefix + ": " + str(trie.startsWith(prefix)))
 
 ### 
+
 update
+
 ###
