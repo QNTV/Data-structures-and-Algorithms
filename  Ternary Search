@@ -178,3 +178,6 @@ arr = [1, 3, 5, 7, 9]
 target = 5
 index = ternary_search(arr, target)
 print(index)  # Output: 2
+
+
+# update
