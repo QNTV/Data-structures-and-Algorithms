@@ -33,8 +33,6 @@ print(nums)
 
 Update
 
-def qsort(nums: List[int]) -> None:
-
 
 ###
 

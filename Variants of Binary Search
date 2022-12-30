@@ -756,8 +756,143 @@ public int shipWithinDays(int[] weights, int days) {
         return true;
     }
 
+
+
+
+def binary_search(a, start, end, x):
+  if(start <= end):
+    middle = (start+end)//2
+    if(a[middle] == x):
+      return middle
+
+    if(a[middle] > x):
+      return binary_search(a, start, middle-1, x)
+
+    if(a[middle] < x):
+      return binary_search(a, middle+1, end, x)
+
+  return -1 # not found
+
+if __name__ == '__main__':
+  a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  index_result = binary_search(a, 0, 9, 7)
+  print(index_result)
+
+
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < target:
+            low = mid + 1
+        elif arr[mid] > target:
+            high = mid - 1
+        else:
+            return mid
+
+    return -1  # Target not found
+
+# Test the binary search algorithm
+arr = [1, 3, 5, 7, 9]
+target = 5
+index = binary_search(arr, target)
+print(index)  # Output: 2
+
+
+
+
+# Python3 Program for recursive binary search.
+
+# Returns index of x in arr if present, else -1
+
+
+def binarySearch(arr, l, r, x):
+
+	# Check base case
+	if r >= l:
+
+		mid = l + (r - l) // 2
+
+		# If element is present at the middle itself
+		if arr[mid] == x:
+			return mid
+
+		# If element is smaller than mid, then it
+		# can only be present in left subarray
+		elif arr[mid] > x:
+			return binarySearch(arr, l, mid-1, x)
+
+		# Else the element can only be present
+		# in right subarray
+		else:
+			return binarySearch(arr, mid + 1, r, x)
+
+	else:
+		# Element is not present in the array
+		return -1
+
+
+# Driver Code
+arr = [2, 3, 4, 10, 40]
+x = 10
+
+# Function call
+result = binarySearch(arr, 0, len(arr)-1, x)
+
+if result != -1:
+	print("Element is present at index % d" % result)
+else:
+	print("Element is not present in array")
+
+
+
+
+# Iterative Approach to Binary Search
+def binarySearch(v, To_Find):
+	lo = 0
+	hi = len(v) - 1
+
+	# This below check covers all cases , so need to check
+	# for mid=lo-(hi-lo)/2
+	while hi - lo > 1:
+		mid = (hi + lo) // 2
+		if v[mid] < To_Find:
+			lo = mid + 1
+		else:
+			hi = mid
+
+	if v[lo] == To_Find:
+		print("Found At Index", lo)
+	elif v[hi] == To_Find:
+		print("Found At Index", hi)
+	else:
+		print("Not Found")
+
+
+if __name__ == '__main__':
+	v = [1, 3, 4, 5, 6]
+
+	To_Find = 1
+	binarySearch(v, To_Find)
+
+	To_Find = 6
+	binarySearch(v, To_Find)
+
+	To_Find = 10
+	binarySearch(v, To_Find)
+
+
+
+
+
+
 ### 
 
-# Update
+
+Update
+
 
 ###
