@@ -29,11 +29,7 @@ qsort(nums)
 print("===== after =====")
 print(nums)
 
-### 
-
-
-
-Update
+### Update
 
 
 
