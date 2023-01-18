@@ -19,7 +19,7 @@ print("slow : " + str(slow.val))
 print("fast : " + str(fast.val))
 
 
-###
-# 
-# 
+
+
+
 #  Update###
