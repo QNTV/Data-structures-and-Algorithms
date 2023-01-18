@@ -9,8 +9,8 @@ for i in range(len(string)): #List of suffixes
 suffixes.sort()
 
 for suffix in suffixes:
-    print(suffix[1])
+    print(suffix[0])
 
-
+#print(suffixes)
 
 # Update
