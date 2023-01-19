@@ -50,6 +50,4 @@ startsWithWords = ["p", "kin", "leet", "cheeze", "shell", "faang"]
 for prefix in startsWithWords:
     print("prefix " + prefix + ": " + str(trie.startsWith(prefix)))
 
-### update
-
-###
+#
