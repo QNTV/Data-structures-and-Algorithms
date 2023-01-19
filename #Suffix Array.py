@@ -11,6 +11,6 @@ suffixes.sort()
 for suffix in suffixes:
     print(suffix[0])
 
-#print(suffixes)
+print(suffixes)
 
 # Update
