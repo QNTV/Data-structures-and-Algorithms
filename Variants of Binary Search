@@ -849,7 +849,6 @@ else:
 
 
 
-
 # Iterative Approach to Binary Search
 def binarySearch(v, To_Find):
 	lo = 0
