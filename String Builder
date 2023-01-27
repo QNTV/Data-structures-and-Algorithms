@@ -38,4 +38,3 @@ print("\nStringJoin was " + str(time_string_concat / time_string_join) + " times
 
 # 
 # 
-# 
