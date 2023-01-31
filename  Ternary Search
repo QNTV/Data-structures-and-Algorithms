@@ -180,4 +180,4 @@ index = ternary_search(arr, target)
 print(index)  # Output: 2
 
 
-### 
+#
