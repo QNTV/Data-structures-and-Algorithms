@@ -883,6 +883,3 @@ if __name__ == '__main__':
 	To_Find = 10
 	binarySearch(v, To_Find)
 
-
-###
-###
