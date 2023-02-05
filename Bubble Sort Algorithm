@@ -46,7 +46,3 @@ if __name__ == '__main__':
   optimized_bubble_sort(a)
   print(a)
 
-
-#
-# 
-# 
