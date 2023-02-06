@@ -91,3 +91,17 @@ def fib_recursive(n: int) -> list[int]:
     return [fib_recursive_term(i) for i in range(n + 1)]
 
 # 
+
+
+
+
+def fib_recursive(n):
+    """[summary]
+    Computes the n-th fibonacci number recursive.
+    Problem: This implementation is very slow.
+    approximate O(2^n)
+    Arguments:
+        n {[int]} -- [description]
+    Returns:
+        [int] -- [description]
+    """
