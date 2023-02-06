@@ -105,3 +105,4 @@ def fib_recursive(n):
     Returns:
         [int] -- [description]
     """
+     # precondition
