@@ -90,7 +90,25 @@ def fib_recursive(n: int) -> list[int]:
         raise Exception("n is negative")
     return [fib_recursive_term(i) for i in range(n + 1)]
 
-# 
+
+
+def fib_memoization(n: int) -> list[int]:
+    """
+    Calculates the first n (0-indexed) Fibonacci numbers using memoization
+    >>> fib_memoization(0)
+    [0]
+    >>> fib_memoization(1)
+    [0, 1]
+    >>> fib_memoization(5)
+    [0, 1, 1, 2, 3, 5]
+    >>> fib_memoization(10)
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    >>> fib_iterative(-1)
+    Traceback (most recent call last):
+        ...
+    Exception: n is negative
+    """
+    
 
 
 
