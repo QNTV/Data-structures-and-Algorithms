@@ -106,3 +106,10 @@ def fib_recursive(n):
         [int] -- [description]
     """
      # precondition
+    assert n >= 0, 'n must be a positive integer'
+
+    if n <= 1:
+        return n
+    return fib_recursive(n-1) + fib_recursive(n-2)
+
+# print(fib_recursive(35)) # => 9227465 (slow)
