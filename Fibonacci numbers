@@ -130,4 +130,4 @@ def fib_recursive(n):
         return n
     return fib_recursive(n-1) + fib_recursive(n-2)
 
-# print(fib_recursive(35)) # => 9227465 (slow)
+print(fib_recursive(36)) # => 9227465 (slow)
